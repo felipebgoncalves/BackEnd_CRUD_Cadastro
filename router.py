@@ -13,6 +13,11 @@ from crud import (
 
 router = APIRouter()
 
+@router.get("/")
+def hello():
+    boas_vindas = "Seja Bem Vindo"
+    return boas_vindas
+
 # CRIAR MINHA ROTA DE BUSCAR TODOS OS ITENS
 # Sempre teremos 2 atributos obrigatórios: o PATH e o RESPONSE
 @router.get("/products/", response_model=List[ProductResponse])
